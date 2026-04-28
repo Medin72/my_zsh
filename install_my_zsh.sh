@@ -142,14 +142,11 @@ if [[ "$answer" == "y" ]]; then
   echo ""
   echo "----------------------------------------------------------------"
   echo "Configure $DST_STSP..."
-  if rm "$DST_STSP"; then
-    if cp "$SRC_STSP" "$DST_STSP"; then
-      echo -e "${COLOR_GREEN}✅ SUCCESS! $DST_STSP was configured.${COLOR_NC}"
-    else
-      echo -e "${COLOR_YELLOW}⚠️  WARNING: $DST_STSP configuration failed!${COLOR_NC}"
-    fi
+  rm "$DST_STSP"
+  if cp "$SRC_STSP" "$DST_STSP"; then
+    echo -e "${COLOR_GREEN}✅ SUCCESS! $DST_STSP was configured.${COLOR_NC}"
   else
-    echo -e "${COLOR_YELLOW}⚠️  WARNING: $DST_STSP is write protected!${COLOR_NC}"
+    echo -e "${COLOR_YELLOW}⚠️  WARNING: $DST_STSP configuration failed!${COLOR_NC}"
   fi
 
   # Set zsh as default shell
