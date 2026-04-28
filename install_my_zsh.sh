@@ -2,8 +2,11 @@
 
 #
 # This script installs:
-# Meslo mono-font
-# Zshell and my config file
+# Meslo nerd font
+# Z Shell and my config file
+# Oh-my-zsh
+# Plugin: Autosuggestions
+# Plugin: Syntax-highlighting
 # Starship
 #
 
@@ -100,12 +103,12 @@ if [[ "$answer" == "y" ]]; then
   echo ""
   echo "----------------------------------------------------------------"
   echo "Installing plugins..."
-  if git clone https://github.com/zsh-users/zsh-autosuggestions\${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions; then
+  if git clone https://github.com/zsh-users/zsh-autosuggestions \ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions; then
     echo -e "${COLOR_GREEN}✅ SUCCESS! zsh-autosuggestions was installed.${COLOR_NC}"
   else
     echo -e "${COLOR_YELLOW}⚠️  WARNING: zsh-autosuggestions installation failed!${COLOR_NC}"
   fi
-  if git clone https://github.com/zsh-users/zsh-syntax-highlighting\${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; then
+  if git clone https://github.com/zsh-users/zsh-syntax-highlighting \ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; then
     echo -e "${COLOR_GREEN}✅ SUCCESS! zsh-syntax-highlighting was installed.${COLOR_NC}"
   else
     echo -e "${COLOR_YELLOW}⚠️  WARNING: zsh-syntax-highlighting installation failed!${COLOR_NC}"
